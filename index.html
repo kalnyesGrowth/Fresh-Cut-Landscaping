@@ -124,6 +124,26 @@
     .area-city{background:var(--green-light);color:var(--green-dark);padding:4px 10px;border-radius:50px;font-size:.75rem;font-weight:600}
     .area-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
     @media(max-width:768px){.area-grid{grid-template-columns:1fr}.area-stats{grid-template-columns:repeat(3,1fr);gap:10px}.area-stat{padding:12px 8px}.area-stat-num{font-size:1.3rem}}
+    /* ── ZIP checker ── */
+    .zip-checker{background:#fff;border-radius:var(--r-lg);padding:24px 22px;box-shadow:var(--shadow);margin-top:20px;border:1.5px solid var(--border)}
+    .zip-badge{display:inline-block;background:var(--green-light);color:var(--green-dark);font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:50px;text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px}
+    .zip-checker h3{color:var(--green-dark);font-size:1rem;margin-bottom:4px}
+    .zip-checker p{font-size:.8rem;color:var(--muted);margin-bottom:14px;line-height:1.5}
+    .zip-input-row{display:flex;gap:8px}
+    .zip-input-row input{flex:1;border:1.5px solid var(--border);border-radius:8px;padding:11px 14px;font-size:.92rem;font-family:var(--font);outline:none;transition:border-color .2s}
+    .zip-input-row input:focus{border-color:var(--green-mid)}
+    .zip-check-btn{background:var(--green-dark);color:#fff;border:none;border-radius:8px;padding:11px 18px;font-size:.88rem;font-weight:700;cursor:pointer;font-family:var(--font);white-space:nowrap;transition:background .2s}
+    .zip-check-btn:hover{background:var(--green-mid)}
+    .zip-ok-msg{background:var(--green-light);border:1.5px solid var(--green-bright);color:var(--green-dark);border-radius:8px;padding:10px 14px;font-size:.85rem;font-weight:700;margin:12px 0 8px}
+    .zip-ok-sub{font-size:.78rem;color:var(--muted);margin-bottom:12px}
+    .qs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:14px}
+    .qs-btn{background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:9px 6px;font-size:.72rem;font-weight:600;color:var(--text);cursor:pointer;font-family:var(--font);transition:all .18s;text-align:center;line-height:1.3}
+    .qs-btn:hover{border-color:var(--green-mid);color:var(--green-dark)}
+    .qs-btn.selected{border-color:var(--green-dark);background:var(--green-light);color:var(--green-dark);box-shadow:0 0 0 2px rgba(46,125,50,.12)}
+    .zip-go-btn{width:100%;background:var(--sun);color:#fff;border:none;border-radius:50px;padding:13px;font-size:.92rem;font-weight:800;cursor:pointer;font-family:var(--font);transition:all .2s}
+    .zip-go-btn:hover{background:var(--sun-dark);transform:translateY(-1px);box-shadow:0 4px 16px rgba(245,166,35,.35)}
+    .zip-fail-msg{background:#fff3e0;border:1.5px solid #ffb74d;color:#e65100;border-radius:8px;padding:10px 14px;font-size:.84rem;font-weight:600;margin-top:12px}
+    @media(max-width:480px){.qs-grid{grid-template-columns:repeat(2,1fr)}}
 
     /* ─── PHOTO BAND ─── */
     .photo-band{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;height:380px;overflow:hidden}
@@ -552,23 +572,39 @@
           </svg>
           <a class="area-map-link" href="https://maps.google.com/?q=Fredericksburg,Virginia" target="_blank" rel="noopener">Open in Google Maps →</a>
         </div>
-        <!-- Instant Quote Request -->
-        <div style="background:#fff;border-radius:var(--r-lg);padding:24px;box-shadow:var(--shadow);margin-top:20px;border:1.5px solid var(--border)">
-          <h3 style="color:var(--green-dark);margin-bottom:4px">Request a Free Quote</h3>
-          <p style="font-size:.8rem;color:var(--muted);margin-bottom:16px">Alex will call you back within 2 hours.</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-            <input placeholder="Your Name" style="border:1.5px solid var(--border);border-radius:8px;padding:10px;font-size:.85rem;outline:none;font-family:var(--font)">
-            <input placeholder="Phone Number" style="border:1.5px solid var(--border);border-radius:8px;padding:10px;font-size:.85rem;outline:none;font-family:var(--font)">
-            <select style="border:1.5px solid var(--border);border-radius:8px;padding:10px;font-size:.85rem;outline:none;font-family:var(--font);background:#fff;grid-column:1/-1">
-              <option value="">Service Needed...</option>
-              <option>Landscaping</option><option>Mulching</option>
-              <option>Tree Trimming & Removal</option><option>Gutter Cleaning</option>
-              <option>Leaf Removal</option><option>Junk Removal</option>
-              <option>Storm Damage Cleanup</option><option>Multiple Services</option>
-            </select>
-            <input placeholder="Your Zip Code" style="border:1.5px solid var(--border);border-radius:8px;padding:10px;font-size:.85rem;outline:none;font-family:var(--font);grid-column:1/-1">
+        <!-- ZIP Checker + Quick-Start -->
+        <div class="zip-checker">
+          <div class="zip-header">
+            <span class="zip-badge">📍 Area Check</span>
+            <h3>Does Alex Cover Your ZIP?</h3>
+            <p>Enter your ZIP and we'll send you straight to the booking form — no re-typing.</p>
           </div>
-          <button class="form-submit" style="margin-top:12px">🌿 Get My Free Quote</button>
+          <div class="zip-input-row">
+            <input type="text" id="qzip" placeholder="e.g. 22554" maxlength="5" inputmode="numeric" oninput="resetZipCheck()">
+            <button class="zip-check-btn" onclick="checkZip()">Check →</button>
+          </div>
+          <p id="zip-error" class="form-error" style="margin-top:6px">Please enter a valid 5-digit ZIP code.</p>
+
+          <!-- Confirmed in-area -->
+          <div id="zip-ok" style="display:none">
+            <div class="zip-ok-msg">✅ Great news — Alex serves your area!</div>
+            <p class="zip-ok-sub">Pick your service below and we'll pre-fill your spot in the booking form.</p>
+            <div class="qs-grid">
+              <button class="qs-btn" onclick="selectQS(this,'Lawn Care &amp; Landscaping')">🌿 Landscaping</button>
+              <button class="qs-btn" onclick="selectQS(this,'Mulching')">🪵 Mulching</button>
+              <button class="qs-btn" onclick="selectQS(this,'Tree Trimming &amp; Removal')">🌳 Tree / Removal</button>
+              <button class="qs-btn" onclick="selectQS(this,'Gutter Cleaning')">🏠 Gutters</button>
+              <button class="qs-btn" onclick="selectQS(this,'Leaf &amp; Junk Removal')">🍂 Leaf / Junk</button>
+              <button class="qs-btn" onclick="selectQS(this,'Multiple / Not Sure')">📋 Not sure</button>
+            </div>
+            <button class="zip-go-btn" onclick="goToBooking()">Start My Free Estimate →</button>
+          </div>
+
+          <!-- Out-of-area / unsure -->
+          <div id="zip-fail" style="display:none">
+            <div class="zip-fail-msg">We may cover your area — call Alex to confirm.</div>
+            <a href="tel:5404557405" class="btn btn-green" style="margin-top:12px;display:inline-flex">📞 Call (540) 455-7405</a>
+          </div>
         </div>
       </div>
     </div>
@@ -1272,6 +1308,53 @@
 </script>
 
 <script>
+/* ── ZIP Checker / Quick-Start ── */
+var _qsvc = '';
+
+function resetZipCheck(){
+  document.getElementById('zip-ok').style.display   = 'none';
+  document.getElementById('zip-fail').style.display = 'none';
+  document.getElementById('zip-error').style.display= 'none';
+}
+
+function checkZip(){
+  var zip = document.getElementById('qzip').value.trim();
+  if(!/^\d{5}$/.test(zip)){
+    document.getElementById('zip-error').style.display = 'block';
+    return;
+  }
+  document.getElementById('zip-error').style.display = 'none';
+  var n = parseInt(zip, 10);
+  // Virginia ZIPs span 20100–24699
+  var isVA = (n >= 20100 && n <= 24699);
+  document.getElementById('zip-ok').style.display   = isVA ? 'block' : 'none';
+  document.getElementById('zip-fail').style.display = isVA ? 'none'  : 'block';
+}
+
+function selectQS(btn, val){
+  document.querySelectorAll('.qs-btn').forEach(function(b){ b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  _qsvc = val;
+}
+
+function goToBooking(){
+  // Pre-fill ZIP in main form step 2
+  var zipEl = document.getElementById('f-zip');
+  if(zipEl) zipEl.value = document.getElementById('qzip').value.trim();
+
+  // Pre-select matching service button in step 1 and advance if a service was picked
+  if(_qsvc){
+    document.querySelectorAll('.service-btn').forEach(function(btn){
+      var label = btn.querySelector('.svc-label');
+      if(label && label.textContent.replace(/&amp;/g,'&').trim() === _qsvc.replace(/&amp;/g,'&').trim()){
+        selectService(btn, _qsvc);
+      }
+    });
+  }
+
+  document.getElementById('contact').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
 /* ── Multi-step Booking Form ── */
 var _svc = '', _time = '';
 var _pills = { urgency: '', proptype: '', lotsize: '', recurring: '' };
