@@ -216,32 +216,50 @@
     @media(max-width:768px){.why-trust-grid{grid-template-columns:1fr}}
 
     /* ─── CONTACT / BOOKING ─── */
-    #contact{background:#fff;padding:76px 5%}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-    .contact-info-list{display:flex;flex-direction:column;gap:16px;margin-top:24px}
-    .contact-row{display:flex;align-items:center;gap:12px;font-size:.9rem}
-    .contact-icon{width:40px;height:40px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-    .contact-row a{color:var(--green-mid);font-weight:600}
     /* ── Multi-step booking form ── */
-    .booking-form{background:var(--card);border-radius:var(--r-lg);padding:32px 28px;border:1.5px solid var(--border)}
+    #contact{background:var(--green-light);padding:80px 5%}
+    .booking-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.3fr;gap:52px;align-items:start}
+    .booking-left{}
+    .booking-badge{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1.5px solid var(--green-bright);color:var(--green-dark);font-size:.72rem;font-weight:700;padding:5px 13px;border-radius:50px;margin-bottom:18px;text-transform:uppercase;letter-spacing:.8px}
+    .booking-left h2{font-size:1.7rem;line-height:1.25;margin-bottom:12px;color:var(--green-dark)}
+    .booking-left .bl-sub{color:var(--muted);font-size:.92rem;line-height:1.7;margin-bottom:28px}
+    .bl-proof{display:flex;align-items:center;gap:10px;background:#fff;border-radius:12px;padding:14px 18px;margin-bottom:20px;border:1px solid var(--border)}
+    .bl-proof-stars{color:#f5a623;font-size:1rem;letter-spacing:1px}
+    .bl-proof-text{font-size:.8rem;color:var(--text);line-height:1.4}
+    .bl-proof-text strong{color:var(--green-dark)}
+    .bl-trust-list{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+    .bl-trust-row{display:flex;align-items:center;gap:11px;font-size:.85rem;color:var(--text)}
+    .bl-trust-icon{width:32px;height:32px;background:var(--green-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+    .bl-contact-box{background:#fff;border-radius:12px;padding:18px 20px;border:1px solid var(--border)}
+    .bl-contact-row{display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--text);padding:7px 0;border-bottom:1px solid var(--border)}
+    .bl-contact-row:last-child{border-bottom:none;padding-bottom:0}
+    .bl-contact-row a{color:var(--green-dark);font-weight:700;text-decoration:none}
+    .bl-contact-row a:hover{text-decoration:underline}
+    .booking-form{background:#fff;border-radius:16px;padding:32px 28px;border:1.5px solid var(--border);box-shadow:0 4px 32px rgba(0,0,0,.07)}
     .booking-steps{display:flex;gap:0;margin-bottom:28px;position:relative}
-    .booking-steps::before{content:'';position:absolute;top:18px;left:10%;right:10%;height:2px;background:var(--border);z-index:0}
-    .bstep{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;position:relative;z-index:1}
+    .booking-steps::before{content:'';position:absolute;top:18px;left:8%;right:8%;height:2px;background:var(--border);z-index:0}
+    .bstep{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;position:relative;z-index:1}
     .bstep-dot{width:36px;height:36px;border-radius:50%;background:#fff;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:var(--muted);transition:all .3s}
     .bstep.active .bstep-dot{background:var(--green-dark);border-color:var(--green-dark);color:#fff}
     .bstep.done .bstep-dot{background:var(--green-bright);border-color:var(--green-bright);color:#fff}
-    .bstep-label{font-size:.68rem;font-weight:600;color:var(--muted);text-align:center;line-height:1.3}
-    .bstep.active .bstep-label{color:var(--green-dark)}
+    .bstep-label{font-size:.66rem;font-weight:600;color:var(--muted);text-align:center;line-height:1.3}
+    .bstep.active .bstep-label,.bstep.done .bstep-label{color:var(--green-dark)}
     .booking-panel{display:none}
     .booking-panel.active{display:block}
-    .booking-panel h3{font-size:1.05rem;font-weight:800;color:var(--green-dark);margin-bottom:6px}
-    .booking-panel p{font-size:.82rem;color:var(--muted);margin-bottom:20px}
+    .booking-panel h3{font-size:1.05rem;font-weight:800;color:var(--green-dark);margin-bottom:4px}
+    .booking-panel .panel-sub{font-size:.8rem;color:var(--muted);margin-bottom:18px}
     .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:4px}
     .service-btn{background:#fff;border:1.5px solid var(--border);border-radius:var(--r);padding:14px 8px;text-align:center;cursor:pointer;transition:all .2s;font-family:var(--font)}
     .service-btn:hover{border-color:var(--green-mid);background:var(--green-light)}
     .service-btn.selected{border-color:var(--green-dark);background:var(--green-light);box-shadow:0 0 0 3px rgba(46,125,50,.12)}
-    .service-btn .svc-icon{font-size:1.6rem;display:block;margin-bottom:6px}
-    .service-btn .svc-label{font-size:.72rem;font-weight:700;color:var(--green-dark);line-height:1.3}
+    .service-btn .svc-icon{font-size:1.5rem;display:block;margin-bottom:5px}
+    .service-btn .svc-label{font-size:.7rem;font-weight:700;color:var(--green-dark);line-height:1.3}
+    .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:4px}
+    .pill-btn{background:#fff;border:1.5px solid var(--border);border-radius:50px;padding:8px 16px;font-size:.78rem;font-weight:600;color:var(--text);cursor:pointer;font-family:var(--font);transition:all .2s;white-space:nowrap}
+    .pill-btn:hover{border-color:var(--green-mid);color:var(--green-dark)}
+    .pill-btn.selected{border-color:var(--green-dark);background:var(--green-light);color:var(--green-dark);box-shadow:0 0 0 3px rgba(46,125,50,.1)}
+    .pill-btn.urgent-btn.selected{border-color:#c62828;background:#ffebee;color:#c62828;box-shadow:0 0 0 3px rgba(198,40,40,.1)}
+    .pill-label{font-size:.78rem;font-weight:600;color:var(--text);display:block;margin-bottom:8px;margin-top:16px}
     .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
     .form-group label{font-size:.82rem;font-weight:600;color:var(--text)}
     .form-group input,.form-group select,.form-group textarea{
@@ -249,31 +267,37 @@
       font-size:.9rem;font-family:var(--font);outline:none;transition:border-color .2s;background:#fff;width:100%;box-sizing:border-box
     }
     .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green-mid)}
-    .form-group textarea{resize:vertical;min-height:90px}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .form-group textarea{resize:vertical;min-height:80px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .form-row-3{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}
     .time-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:4px}
-    .time-btn{background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:12px 6px;text-align:center;cursor:pointer;font-family:var(--font);transition:all .2s}
+    .time-btn{background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:11px 6px;text-align:center;cursor:pointer;font-family:var(--font);transition:all .2s}
     .time-btn:hover{border-color:var(--green-mid)}
     .time-btn.selected{border-color:var(--green-dark);background:var(--green-light);box-shadow:0 0 0 3px rgba(46,125,50,.12)}
-    .time-btn .t-label{font-size:.75rem;font-weight:700;color:var(--green-dark);display:block}
-    .time-btn .t-sub{font-size:.66rem;color:var(--muted);display:block;margin-top:2px}
-    .booking-nav{display:flex;gap:10px;margin-top:20px}
-    .btn-back{background:#fff;border:1.5px solid var(--border);color:var(--muted);padding:12px 22px;border-radius:50px;font-weight:600;font-size:.88rem;cursor:pointer;transition:all .2s;font-family:var(--font)}
+    .time-btn .t-label{font-size:.74rem;font-weight:700;color:var(--green-dark);display:block}
+    .time-btn .t-sub{font-size:.64rem;color:var(--muted);display:block;margin-top:2px}
+    .booking-nav{display:flex;gap:10px;margin-top:18px}
+    .btn-back{background:#fff;border:1.5px solid var(--border);color:var(--muted);padding:11px 20px;border-radius:50px;font-weight:600;font-size:.86rem;cursor:pointer;transition:all .2s;font-family:var(--font)}
     .btn-back:hover{border-color:var(--green-mid);color:var(--green-mid)}
-    .btn-next{background:var(--green-dark);color:#fff;padding:12px 28px;border-radius:50px;font-weight:700;font-size:.88rem;cursor:pointer;border:none;transition:all .2s;font-family:var(--font);flex:1}
+    .btn-next{background:var(--green-dark);color:#fff;padding:11px 28px;border-radius:50px;font-weight:700;font-size:.88rem;cursor:pointer;border:none;transition:all .2s;font-family:var(--font);flex:1}
     .btn-next:hover{background:var(--green-mid)}
-    .btn-submit{background:var(--sun);color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;cursor:pointer;border:none;transition:all .2s;font-family:var(--font);width:100%;margin-top:20px}
-    .btn-submit:hover{background:var(--sun-dark)}
-    .booking-success{text-align:center;padding:20px 0;display:none}
-    .booking-success .success-icon{font-size:3rem;margin-bottom:12px}
-    .booking-success h3{color:var(--green-dark);font-size:1.2rem;margin-bottom:8px}
-    .booking-success p{color:var(--muted);font-size:.88rem;line-height:1.7}
-    .form-error{color:#d32f2f;font-size:.78rem;margin-top:4px;display:none}
-    @media(max-width:768px){
-      .contact-grid{grid-template-columns:1fr}
+    .btn-submit{background:var(--sun);color:#fff;padding:15px 28px;border-radius:50px;font-weight:800;font-size:1rem;cursor:pointer;border:none;transition:all .2s;font-family:var(--font);width:100%;margin-top:16px;letter-spacing:.2px}
+    .btn-submit:hover{background:var(--sun-dark);transform:translateY(-1px);box-shadow:0 4px 20px rgba(245,166,35,.4)}
+    .submit-reassure{text-align:center;font-size:.73rem;color:var(--muted);margin-top:10px}
+    .step-reassure{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:16px;font-size:.72rem;color:var(--muted);border-top:1px solid var(--border);padding-top:14px}
+    .booking-success{text-align:center;padding:24px 8px;display:none}
+    .booking-success .success-icon{font-size:3.2rem;margin-bottom:14px}
+    .booking-success h3{color:var(--green-dark);font-size:1.25rem;margin-bottom:10px}
+    .booking-success p{color:var(--muted);font-size:.88rem;line-height:1.75}
+    .booking-success .call-chip{display:inline-flex;align-items:center;gap:8px;background:var(--green-light);border:1.5px solid var(--green-bright);color:var(--green-dark);font-weight:700;padding:10px 22px;border-radius:50px;font-size:.9rem;margin-top:16px;text-decoration:none}
+    .form-error{color:#c62828;font-size:.76rem;margin-top:4px;display:none;font-weight:500}
+    @media(max-width:900px){.booking-wrap{grid-template-columns:1fr}}
+    @media(max-width:600px){
       .service-grid{grid-template-columns:repeat(2,1fr)}
-      .form-row{grid-template-columns:1fr}
-      .booking-form{padding:24px 18px}
+      .form-row,.form-row-3{grid-template-columns:1fr}
+      .booking-form{padding:24px 16px}
+      .time-grid{grid-template-columns:1fr 1fr}
+      .booking-left h2{font-size:1.4rem}
     }
 
     /* ─── FAQ ─── */
@@ -856,106 +880,177 @@
 </section>
 
 <!-- ═══════════════════════════════
-     CONTACT FORM
+     CONTACT / BOOKING FORM
      ═══════════════════════════════ -->
 <section id="contact">
-  <div class="section-inner">
-    <div class="contact-grid reveal">
-      <div>
-        <span class="sec-label">Get In Touch</span>
-        <h2>Have a Question?<br>Reach Out Anytime.</h2>
-        <p class="sec-sub">Alex responds to all messages personally — usually within 2 hours. No call centers, no bots.</p>
-        <div class="contact-info-list">
-          <div class="contact-row"><div class="contact-icon">📞</div><div><strong>Alex M.</strong> — <a href="tel:5404557405">540-455-7405</a></div></div>
-          <div class="contact-row"><div class="contact-icon">💬</div><div><a href="sms:5404557405">Send a Text</a> — fastest response</div></div>
-          <div class="contact-row"><div class="contact-icon">🕐</div><div>Mon–Fri 7AM–6PM · Sat 8AM–4PM</div></div>
-          <div class="contact-row"><div class="contact-icon">📍</div><div>Serving Virginia's 540 Area</div></div>
-          <div class="contact-row"><div class="contact-icon">🆓</div><div><strong>All estimates are free</strong> — no obligation</div></div>
+  <div class="booking-wrap">
+
+    <!-- LEFT: trust + contact info -->
+    <div class="booking-left reveal">
+      <div class="booking-badge">🌿 Free Estimate · No Obligation</div>
+      <h2>Book Your Free<br>Property Estimate</h2>
+      <p class="bl-sub">Alex visits your property, walks the yard, and gives you a flat quote — no hidden fees, no pressure. Takes 2 minutes to request online.</p>
+
+      <div class="bl-proof">
+        <div>
+          <div class="bl-proof-stars">★★★★★</div>
+          <div class="bl-proof-text"><strong>4.9 stars · 80+ Virginia homeowners</strong><br>served across Fredericksburg, Stafford &amp; surrounding areas</div>
         </div>
       </div>
-      <div>
-        <div class="booking-form">
-          <!-- Step indicators -->
-          <div class="booking-steps">
-            <div class="bstep active" id="bs1"><div class="bstep-dot">1</div><div class="bstep-label">Service</div></div>
-            <div class="bstep" id="bs2"><div class="bstep-dot">2</div><div class="bstep-label">Address</div></div>
-            <div class="bstep" id="bs3"><div class="bstep-dot">3</div><div class="bstep-label">Schedule</div></div>
-            <div class="bstep" id="bs4"><div class="bstep-dot">4</div><div class="bstep-label">Contact</div></div>
+
+      <div class="bl-trust-list">
+        <div class="bl-trust-row"><div class="bl-trust-icon">✓</div>Alex personally visits every property — no crews you've never met</div>
+        <div class="bl-trust-row"><div class="bl-trust-icon">📋</div>You get a clear, itemized quote on the spot — no vague estimates</div>
+        <div class="bl-trust-row"><div class="bl-trust-icon">⚡</div>Confirmed within 2 hours of submitting — usually faster</div>
+        <div class="bl-trust-row"><div class="bl-trust-icon">0</div>$0 to request an estimate — ever</div>
+      </div>
+
+      <div class="bl-contact-box">
+        <div class="bl-contact-row">📞 <span><strong>Alex M.</strong> — <a href="tel:5404557405">540-455-7405</a></span></div>
+        <div class="bl-contact-row">💬 <span><a href="sms:5404557405">Send a Text</a> — fastest response</span></div>
+        <div class="bl-contact-row">🕐 <span>Mon–Sat · 7 AM – 6 PM</span></div>
+        <div class="bl-contact-row">📍 <span>Virginia's 540 Area — Fredericksburg, Stafford, Spotsylvania &amp; more</span></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: multi-step form -->
+    <div class="reveal">
+      <div class="booking-form">
+
+        <!-- Step indicators -->
+        <div class="booking-steps">
+          <div class="bstep active" id="bs1"><div class="bstep-dot">1</div><div class="bstep-label">Service</div></div>
+          <div class="bstep" id="bs2"><div class="bstep-dot">2</div><div class="bstep-label">Property</div></div>
+          <div class="bstep" id="bs3"><div class="bstep-dot">3</div><div class="bstep-label">Schedule</div></div>
+          <div class="bstep" id="bs4"><div class="bstep-dot">4</div><div class="bstep-label">Contact</div></div>
+        </div>
+
+        <!-- ── Step 1: Service + Urgency ── -->
+        <div class="booking-panel active" id="bp1">
+          <h3>What do you need done?</h3>
+          <p class="panel-sub">Select the service you'd like Alex to quote at your property.</p>
+          <div class="service-grid">
+            <button class="service-btn" onclick="selectService(this,'Lawn Care &amp; Landscaping')"><span class="svc-icon">🌿</span><span class="svc-label">Lawn Care &amp; Landscaping</span></button>
+            <button class="service-btn" onclick="selectService(this,'Mulching')"><span class="svc-icon">🪵</span><span class="svc-label">Mulching</span></button>
+            <button class="service-btn" onclick="selectService(this,'Tree Trimming &amp; Removal')"><span class="svc-icon">🌳</span><span class="svc-label">Tree Trimming &amp; Removal</span></button>
+            <button class="service-btn" onclick="selectService(this,'Gutter Cleaning')"><span class="svc-icon">🏠</span><span class="svc-label">Gutter Cleaning</span></button>
+            <button class="service-btn" onclick="selectService(this,'Leaf &amp; Junk Removal')"><span class="svc-icon">🍂</span><span class="svc-label">Leaf &amp; Junk Removal</span></button>
+            <button class="service-btn" onclick="selectService(this,'Multiple / Not Sure')"><span class="svc-icon">📋</span><span class="svc-label">Multiple / Not Sure</span></button>
+          </div>
+          <p id="svc-error" class="form-error">Please select a service to continue.</p>
+
+          <span class="pill-label">How urgent is this?</span>
+          <div class="pill-row">
+            <button class="pill-btn" onclick="selectPill(this,'urgency','No rush — 2+ weeks out')">No rush</button>
+            <button class="pill-btn" onclick="selectPill(this,'urgency','This week')">This week</button>
+            <button class="pill-btn urgent-btn" onclick="selectPill(this,'urgency','URGENT — Storm / Emergency')">🚨 Urgent / Storm</button>
           </div>
 
-          <!-- Step 1: Service -->
-          <div class="booking-panel active" id="bp1">
-            <h3>What service do you need?</h3>
-            <p>Pick the service you'd like Alex to quote at your property.</p>
-            <div class="service-grid">
-              <button class="service-btn" onclick="selectService(this,'Lawn Care & Landscaping')"><span class="svc-icon">🌿</span><span class="svc-label">Lawn Care &amp; Landscaping</span></button>
-              <button class="service-btn" onclick="selectService(this,'Mulching')"><span class="svc-icon">🪵</span><span class="svc-label">Mulching</span></button>
-              <button class="service-btn" onclick="selectService(this,'Tree Trimming & Removal')"><span class="svc-icon">🌳</span><span class="svc-label">Tree Trimming &amp; Removal</span></button>
-              <button class="service-btn" onclick="selectService(this,'Gutter Cleaning')"><span class="svc-icon">🏠</span><span class="svc-label">Gutter Cleaning</span></button>
-              <button class="service-btn" onclick="selectService(this,'Leaf Removal')"><span class="svc-icon">🍂</span><span class="svc-label">Leaf Removal</span></button>
-              <button class="service-btn" onclick="selectService(this,'Multiple / Not Sure')"><span class="svc-icon">❓</span><span class="svc-label">Multiple / Not Sure</span></button>
-            </div>
-            <p id="svc-error" class="form-error">Please select a service to continue.</p>
-            <div class="booking-nav"><button class="btn-next" onclick="goStep(2)">Next — Address →</button></div>
+          <div class="step-reassure">🔒 Free · No credit card · No obligation</div>
+          <div class="booking-nav"><button class="btn-next" onclick="goStep(2)">Next — Property Details →</button></div>
+        </div>
+
+        <!-- ── Step 2: Property details + Address ── -->
+        <div class="booking-panel" id="bp2">
+          <h3>Tell us about the property</h3>
+          <p class="panel-sub">This helps Alex arrive prepared and give you an accurate quote.</p>
+
+          <span class="pill-label">Property type</span>
+          <div class="pill-row">
+            <button class="pill-btn" onclick="selectPill(this,'proptype','Single-family home')">🏡 House</button>
+            <button class="pill-btn" onclick="selectPill(this,'proptype','Townhome / Condo')">🏘 Townhome</button>
+            <button class="pill-btn" onclick="selectPill(this,'proptype','Commercial property')">🏢 Commercial</button>
+            <button class="pill-btn" onclick="selectPill(this,'proptype','Other')">Other</button>
           </div>
 
-          <!-- Step 2: Address -->
-          <div class="booking-panel" id="bp2">
-            <h3>Where is the property?</h3>
-            <p>Alex will use this to plan his route to your home.</p>
-            <div class="form-group"><label>Street Address *</label><input type="text" id="f-street" placeholder="123 Oak Street"></div>
-            <div class="form-row">
-              <div class="form-group"><label>City *</label><input type="text" id="f-city" placeholder="Stafford"></div>
-              <div class="form-group"><label>ZIP Code *</label><input type="text" id="f-zip" placeholder="22554" maxlength="5"></div>
-            </div>
-            <div class="form-group"><label>Gate Code / Access Notes <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input type="text" id="f-access" placeholder="e.g. Gate code #1234, dog in yard, park on street…"></div>
-            <p id="addr-error" class="form-error">Please fill in street address, city and ZIP.</p>
-            <div class="booking-nav">
-              <button class="btn-back" onclick="goStep(1)">← Back</button>
-              <button class="btn-next" onclick="goStep(3)">Next — Schedule →</button>
-            </div>
+          <span class="pill-label">Approximate yard / lot size</span>
+          <div class="pill-row">
+            <button class="pill-btn" onclick="selectPill(this,'lotsize','Small (under ¼ acre)')">Small (&lt;¼ ac)</button>
+            <button class="pill-btn" onclick="selectPill(this,'lotsize','Medium (¼–½ acre)')">Medium (¼–½ ac)</button>
+            <button class="pill-btn" onclick="selectPill(this,'lotsize','Large (½–1 acre)')">Large (½–1 ac)</button>
+            <button class="pill-btn" onclick="selectPill(this,'lotsize','Very large (1+ acres)')">Very large (1+ ac)</button>
           </div>
 
-          <!-- Step 3: Schedule -->
-          <div class="booking-panel" id="bp3">
-            <h3>When works best for you?</h3>
-            <p>Pick a preferred date and time — Alex will confirm within 2 hours.</p>
-            <div class="form-group"><label>Preferred Date *</label><input type="date" id="f-date" min=""></div>
-            <label style="font-size:.82rem;font-weight:600;color:var(--text);display:block;margin-bottom:10px">Preferred Time *</label>
-            <div class="time-grid">
-              <button class="time-btn" onclick="selectTime(this,'Morning (7–10 AM)')"><span class="t-label">🌅 Morning</span><span class="t-sub">7:00 – 10:00 AM</span></button>
-              <button class="time-btn" onclick="selectTime(this,'Midday (10 AM–2 PM)')"><span class="t-label">☀️ Midday</span><span class="t-sub">10:00 AM – 2:00 PM</span></button>
-              <button class="time-btn" onclick="selectTime(this,'Afternoon (2–6 PM)')"><span class="t-label">🌤 Afternoon</span><span class="t-sub">2:00 – 6:00 PM</span></button>
-            </div>
-            <div class="form-group" style="margin-top:16px"><label>Additional Notes <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="f-notes" placeholder="Anything Alex should know — property size, specific areas, urgency…"></textarea></div>
-            <p id="sched-error" class="form-error">Please select a date and time.</p>
-            <div class="booking-nav">
-              <button class="btn-back" onclick="goStep(2)">← Back</button>
-              <button class="btn-next" onclick="goStep(4)">Next — Contact Info →</button>
-            </div>
+          <div class="form-group" style="margin-top:16px"><label>Street Address *</label><input type="text" id="f-street" placeholder="123 Oak Street" autocomplete="street-address"></div>
+          <div class="form-row-3">
+            <div class="form-group"><label>City *</label><input type="text" id="f-city" placeholder="Stafford" autocomplete="address-level2"></div>
+            <div class="form-group"><label>State</label><input type="text" id="f-state" value="VA" readonly style="background:#f5f5f5;color:var(--muted)"></div>
+            <div class="form-group"><label>ZIP *</label><input type="text" id="f-zip" placeholder="22554" maxlength="5" inputmode="numeric" autocomplete="postal-code"></div>
           </div>
+          <div class="form-group"><label>Gate Code / Access Notes <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input type="text" id="f-access" placeholder="e.g. Gate code #1234, dog in yard, park in driveway…"></div>
 
-          <!-- Step 4: Contact -->
-          <div class="booking-panel" id="bp4">
-            <h3>Last step — how do we reach you?</h3>
-            <p>Alex will personally confirm your appointment within 2 hours.</p>
-            <div class="form-row">
-              <div class="form-group"><label>Your Name *</label><input type="text" id="f-name" placeholder="John Smith"></div>
-              <div class="form-group"><label>Phone Number *</label><input type="tel" id="f-phone" placeholder="(540) 000-0000"></div>
-            </div>
-            <div class="form-group"><label>Email Address *</label><input type="email" id="f-email" placeholder="john@email.com"></div>
-            <p id="contact-error" class="form-error">Please fill in your name, phone and email.</p>
-            <button class="btn-submit" onclick="submitBooking()">📅 Book My Free Estimate</button>
-            <div class="booking-nav" style="margin-top:10px"><button class="btn-back" onclick="goStep(3)">← Back</button></div>
-          </div>
-
-          <!-- Success -->
-          <div class="booking-success" id="booking-success">
-            <div class="success-icon">✅</div>
-            <h3>Request Sent — Alex Will Call You!</h3>
-            <p>Your free estimate request has been received.<br>Alex personally responds to every request, usually within <strong>2 hours</strong>.<br><br>Watch for a call or text from <strong>(540) 455-7405</strong>.</p>
+          <p id="addr-error" class="form-error">Please fill in street address, city and ZIP code.</p>
+          <div class="step-reassure">📍 Alex uses your address to plan his route — never shared with third parties</div>
+          <div class="booking-nav">
+            <button class="btn-back" onclick="goStep(1)">← Back</button>
+            <button class="btn-next" onclick="goStep(3)">Next — Schedule →</button>
           </div>
         </div>
+
+        <!-- ── Step 3: Schedule ── -->
+        <div class="booking-panel" id="bp3">
+          <h3>When works best for the visit?</h3>
+          <p class="panel-sub">Alex will call to confirm within 2 hours of your request.</p>
+          <div class="form-group"><label>Preferred Date *</label><input type="date" id="f-date" min=""></div>
+
+          <span class="pill-label">Preferred time window *</span>
+          <div class="time-grid">
+            <button class="time-btn" onclick="selectTime(this,'Morning (7–10 AM)')"><span class="t-label">🌅 Morning</span><span class="t-sub">7 – 10 AM</span></button>
+            <button class="time-btn" onclick="selectTime(this,'Midday (10 AM – 2 PM)')"><span class="t-label">☀️ Midday</span><span class="t-sub">10 AM – 2 PM</span></button>
+            <button class="time-btn" onclick="selectTime(this,'Afternoon (2–6 PM)')"><span class="t-label">🌤 Afternoon</span><span class="t-sub">2 – 6 PM</span></button>
+          </div>
+
+          <span class="pill-label">Is this a one-time job or recurring?</span>
+          <div class="pill-row">
+            <button class="pill-btn" onclick="selectPill(this,'recurring','One-time job')">One-time job</button>
+            <button class="pill-btn" onclick="selectPill(this,'recurring','Recurring / seasonal')">Recurring / seasonal</button>
+            <button class="pill-btn" onclick="selectPill(this,'recurring','Not sure yet')">Not sure yet</button>
+          </div>
+
+          <div class="form-group" style="margin-top:14px"><label>Anything else Alex should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="f-notes" placeholder="Specific trees, areas, damage from a storm, HOA requirements, pets in yard…"></textarea></div>
+
+          <p id="sched-error" class="form-error">Please select a preferred date and time window.</p>
+          <div class="step-reassure">✓ Almost done — one more step</div>
+          <div class="booking-nav">
+            <button class="btn-back" onclick="goStep(2)">← Back</button>
+            <button class="btn-next" onclick="goStep(4)">Next — Your Info →</button>
+          </div>
+        </div>
+
+        <!-- ── Step 4: Contact info ── -->
+        <div class="booking-panel" id="bp4">
+          <h3>How does Alex reach you?</h3>
+          <p class="panel-sub">He calls or texts to confirm your estimate visit — usually within 2 hours.</p>
+          <div class="form-group"><label>Your Full Name *</label><input type="text" id="f-name" placeholder="John Smith" autocomplete="name"></div>
+          <div class="form-group"><label>Phone Number * <span style="font-weight:400;color:var(--muted)">(best way to confirm)</span></label><input type="tel" id="f-phone" placeholder="(540) 000-0000" autocomplete="tel" inputmode="tel"></div>
+          <div class="form-group"><label>Email Address <span style="font-weight:400;color:var(--muted)">(optional — for written confirmation)</span></label><input type="email" id="f-email" placeholder="your@email.com" autocomplete="email"></div>
+          <div class="form-group">
+            <label>How did you find us? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+            <select id="f-referral">
+              <option value="">— Select —</option>
+              <option>Google Search</option>
+              <option>Google Maps</option>
+              <option>Facebook</option>
+              <option>Nextdoor</option>
+              <option>Friend / Neighbor referral</option>
+              <option>Saw the truck / yard sign</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <p id="contact-error" class="form-error">Please enter your name and phone number.</p>
+          <button class="btn-submit" onclick="submitBooking()">📅 Request My FREE Estimate →</button>
+          <p class="submit-reassure">🔒 No payment needed · Alex calls you personally · 100% free</p>
+          <div class="booking-nav" style="margin-top:6px"><button class="btn-back" onclick="goStep(3)">← Back</button></div>
+        </div>
+
+        <!-- Success state -->
+        <div class="booking-success" id="booking-success">
+          <div class="success-icon">✅</div>
+          <h3>Request Sent! Alex Will Call You.</h3>
+          <p>Your free estimate request has been received.<br>Alex personally responds to every request — usually within <strong>2 hours</strong>.<br><br>Watch for a call or text from:</p>
+          <a href="tel:5404557405" class="call-chip">📞 (540) 455-7405</a>
+        </div>
+
       </div>
     </div>
   </div>
@@ -1179,8 +1274,8 @@
 <script>
 /* ── Multi-step Booking Form ── */
 var _svc = '', _time = '';
+var _pills = { urgency: '', proptype: '', lotsize: '', recurring: '' };
 
-// Set minimum date to tomorrow
 (function(){
   var d = new Date(); d.setDate(d.getDate()+1);
   var el = document.getElementById('f-date');
@@ -1194,6 +1289,12 @@ function selectService(btn, val){
   document.getElementById('svc-error').style.display = 'none';
 }
 
+function selectPill(btn, group, val){
+  btn.closest('.pill-row').querySelectorAll('.pill-btn').forEach(function(b){ b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  _pills[group] = val;
+}
+
 function selectTime(btn, val){
   document.querySelectorAll('.time-btn').forEach(function(b){ b.classList.remove('selected'); });
   btn.classList.add('selected');
@@ -1202,7 +1303,6 @@ function selectTime(btn, val){
 }
 
 function goStep(n){
-  // Validate before advancing
   if(n === 2 && !_svc){
     document.getElementById('svc-error').style.display = 'block';
     return;
@@ -1225,7 +1325,6 @@ function goStep(n){
     }
     document.getElementById('sched-error').style.display = 'none';
   }
-  // Switch panels
   for(var i=1;i<=4;i++){
     document.getElementById('bp'+i).classList.remove('active');
     var dot = document.getElementById('bs'+i);
@@ -1234,71 +1333,91 @@ function goStep(n){
   }
   document.getElementById('bp'+n).classList.add('active');
   document.getElementById('bs'+n).classList.add('active');
-  // Mark step dot done with checkmark
   document.querySelectorAll('.bstep.done .bstep-dot').forEach(function(d){ d.textContent = '✓'; });
+  document.querySelector('.booking-form').scrollIntoView({behavior:'smooth', block:'nearest'});
 }
 
 function submitBooking(){
   var name  = document.getElementById('f-name').value.trim();
   var phone = document.getElementById('f-phone').value.trim();
   var email = document.getElementById('f-email').value.trim();
-  if(!name || !phone || !email){
+  if(!name || !phone){
     document.getElementById('contact-error').style.display = 'block';
     return;
   }
   document.getElementById('contact-error').style.display = 'none';
 
-  var street = document.getElementById('f-street').value.trim();
-  var city   = document.getElementById('f-city').value.trim();
-  var zip    = document.getElementById('f-zip').value.trim();
-  var access = document.getElementById('f-access').value.trim();
-  var date   = document.getElementById('f-date').value;
-  var notes  = document.getElementById('f-notes').value.trim();
+  var street   = document.getElementById('f-street').value.trim();
+  var city     = document.getElementById('f-city').value.trim();
+  var zip      = document.getElementById('f-zip').value.trim();
+  var access   = document.getElementById('f-access').value.trim();
+  var date     = document.getElementById('f-date').value;
+  var notes    = document.getElementById('f-notes').value.trim();
+  var referral = document.getElementById('f-referral').value;
+
+  var isUrgent = _pills.urgency.indexOf('URGENT') !== -1;
+  var subjectPrefix = isUrgent ? '🚨 URGENT — ' : '🌿 ';
 
   var submitBtn = document.querySelector('.btn-submit');
   submitBtn.disabled = true;
   submitBtn.textContent = 'Sending…';
 
-  // ── Web3Forms submission ──
-  // Get your free access key at https://web3forms.com — enter alex@fresh-cut-landscape.com
-  var accessKey = '25a6e14c-6845-4b49-a53d-9243a51b2ed1';
+  var msgBody = [
+    '=== QUOTE REQUEST DETAILS ===',
+    '',
+    'SERVICE:        ' + _svc,
+    'URGENCY:        ' + (_pills.urgency || 'Not specified'),
+    '',
+    '=== PROPERTY ===',
+    'Address:        ' + street,
+    'City, State ZIP:' + city + ', VA ' + zip,
+    'Property Type:  ' + (_pills.proptype || 'Not specified'),
+    'Lot Size:       ' + (_pills.lotsize  || 'Not specified'),
+    'Access Notes:   ' + (access || 'None'),
+    '',
+    '=== SCHEDULE ===',
+    'Preferred Date: ' + date,
+    'Time Window:    ' + _time,
+    'Job Type:       ' + (_pills.recurring || 'Not specified'),
+    'Extra Notes:    ' + (notes || 'None'),
+    '',
+    '=== CONTACT ===',
+    'Name:           ' + name,
+    'Phone:          ' + phone,
+    'Email:          ' + (email || 'Not provided'),
+    'Found us via:   ' + (referral || 'Not specified')
+  ].join('\n');
 
   fetch('https://api.web3forms.com/submit', {
     method: 'POST',
     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
     body: JSON.stringify({
-      access_key: accessKey,
+      access_key: '25a6e14c-6845-4b49-a53d-9243a51b2ed1',
       to: 'info@fresh-cut-landscape.com',
-      subject: '🌿 New Quote Request — ' + _svc + ' | ' + city + ', VA',
+      subject: subjectPrefix + 'Quote Request — ' + _svc + ' | ' + city + ', VA',
       from_name: name,
       name: name,
       phone: phone,
-      email: email,
-      service: _svc,
-      address: street + ', ' + city + ', VA ' + zip,
-      access_notes: access || 'None',
-      preferred_date: date,
-      preferred_time: _time,
-      notes: notes || 'None'
+      email: email || 'info@fresh-cut-landscape.com',
+      message: msgBody
     })
   })
   .then(function(r){ return r.json(); })
   .then(function(data){
     if(data.success){
-      // Hide form steps & indicators, show success
       document.querySelector('.booking-steps').style.display = 'none';
       for(var i=1;i<=4;i++) document.getElementById('bp'+i).classList.remove('active');
       document.getElementById('booking-success').style.display = 'block';
     } else {
       submitBtn.disabled = false;
-      submitBtn.textContent = '📅 Book My Free Estimate';
+      submitBtn.textContent = '📅 Request My FREE Estimate →';
       alert('Something went wrong. Please call Alex directly at (540) 455-7405.');
     }
   })
   .catch(function(){
     submitBtn.disabled = false;
-    submitBtn.textContent = '📅 Book My Free Estimate';
-    alert('Connection error. Please call Alex directly at (540) 455-7405.');
+    submitBtn.textContent = '📅 Request My FREE Estimate →';
+    alert('Connection error. Please call Alex at (540) 455-7405.');
   });
 }
 </script>
