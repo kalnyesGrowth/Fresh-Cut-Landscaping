@@ -67,6 +67,11 @@
     /* ─── HERO ─── */
     .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 60px;position:relative;overflow:hidden;background:#0d2b18}
     .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
+    .hero-video::-webkit-media-controls{display:none!important}
+    .hero-video::-webkit-media-controls-panel{display:none!important}
+    .hero-video::-webkit-media-controls-play-button{display:none!important}
+    .hero-video::-webkit-media-controls-start-playback-button{display:none!important}
+    @media(max-width:768px){.hero-video{display:none}}
     .hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.52);z-index:1}
     /* Simulated lawn texture strips */
     .hero-img-strip{position:absolute;bottom:0;left:0;right:0;height:45%;background:linear-gradient(to top,rgba(0,0,0,.6),transparent);z-index:2}
@@ -421,8 +426,9 @@
      HERO
      ═══════════════════════════════ -->
 <section class="hero">
-  <video class="hero-video" autoplay loop muted playsinline>
+  <video class="hero-video" autoplay loop muted playsinline webkit-playsinline preload="auto" disableRemotePlayback x-webkit-airplay="deny">
     <source src="hero-bg.mp4" type="video/mp4">
+    <source src="hero-bg-fallback.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
   <!-- Grass silhouette -->
@@ -1308,6 +1314,24 @@
 </script>
 
 <script>
+/* ── Hero video autoplay fix ── */
+(function(){
+  var vid = document.querySelector('.hero-video');
+  if(!vid) return;
+  vid.muted = true;
+  var p = vid.play();
+  if(p !== undefined){
+    p.catch(function(){
+      vid.style.display = 'none';
+    });
+  }
+  // Retry on first user gesture (covers strict autoplay policies)
+  document.addEventListener('touchstart', function retry(){
+    vid.play().catch(function(){});
+    document.removeEventListener('touchstart', retry);
+  }, {once: true, passive: true});
+})();
+
 /* ── ZIP Checker / Quick-Start ── */
 var _qsvc = '';
 
