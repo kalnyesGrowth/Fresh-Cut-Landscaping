@@ -1538,13 +1538,26 @@ function submitBooking(){
     'Found us via:   ' + (referral || 'Not specified')
   ].join('\n');
 
+  fetch('https://boddsbxlaytcrkpuckyn.supabase.co/functions/v1/capture-lead', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      client_id: '54de0b7d-b1f3-4abb-82eb-2f66f2452267',
+      name: name,
+      email: email || '',
+      phone: phone,
+      source: referral || 'Website Form',
+      message: 'Service: ' + _svc + ' | ' + (_pills.urgency || '') + ' | ' + street + ', ' + city + ' VA ' + zip
+    })
+  }).catch(function(){});
+
   fetch('https://api.web3forms.com/submit', {
     method: 'POST',
     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
     body: JSON.stringify({
       access_key: '25a6e14c-6845-4b49-a53d-9243a51b2ed1',
       to: 'info@fresh-cut-landscape.com',
-      subject: subjectPrefix + 'Quote Request — ' + _svc + ' | ' + city + ', VA',
+      subject: subjectPrefix + 'Quote Request -- ' + _svc + ' | ' + city + ', VA',
       from_name: name,
       name: name,
       phone: phone,
@@ -1571,5 +1584,6 @@ function submitBooking(){
   });
 }
 </script>
+<script src="https://project-kday6.vercel.app/tracker/tracker.js" data-client="54de0b7d-b1f3-4abb-82eb-2f66f2452267"></script>
 </body>
 </html>
